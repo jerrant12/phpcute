@@ -1,0 +1,41 @@
+
+
+mysql> CREATE DATABASE TASKDB;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use TASKDB
+Database changed
+mysql> CREATE TABLE TASK(id INT NOT NULL auto_increment, task_desc VARCHAR(50) NOT NULL, PRIMARY KEY(id));
+Query OK, 0 rows affected (0.37 sec)
+
+mysql> INSERT INTO TASK (id, task_desc) VALUES (1, 'Make Pie');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> INSERT INTO TASK (id, task_desc) VALUES (2, 'Eat Pie');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO TASK (id, task_desc) VALUES (3, 'Be Happy');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from TASK
+    -> l
+    -> ;
++----+-----------+
+| id | task_desc |
++----+-----------+
+|  1 | Make Pie  |
+|  2 | Eat Pie   |
+|  3 | Be Happy  |
++----+-----------+
+3 rows in set (0.00 sec)
+
+
+
+CREATE USER 'john'@'localhost' IDENTIFIED BY 'new_password' PASSWORD EXPIRE;
+mysql -u john -p then type new_password
+
+GRANT ALL PRIVILEGES on TASKDB.* to john@localhost
+    -> ;
+
+
+
